@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BruteBros Problemset</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00BFFF",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'glow-primary': '0 0 5px #00BFFF, 0 0 10px #00BFFF, 0 0 15px #00BFFF',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#E0E0E0]">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<header class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-sm border-b border-primary/50">
+<div class="container mx-auto flex h-20 items-center justify-between px-4 lg:px-10 xl:px-20">
+<a class="text-2xl font-bold text-white" href="#">Brute<span class="text-primary">Bros</span></a>
+<nav class="hidden items-center gap-8 lg:flex">
+<a class="text-primary font-semibold transition-colors" href="#">Problems</a>
+<a class="text-white hover:text-primary transition-colors" href="#">Contests</a>
+<a class="text-white hover:text-primary transition-colors" href="#">Discuss</a>
+<a class="text-white hover:text-primary transition-colors" href="#">Leaderboard</a>
+<a class="text-white hover:text-primary transition-colors" href="#">Premium</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="relative rounded-full p-2 text-white hover:bg-primary/20">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 h-2.5 w-2.5 rounded-full bg-primary ring-2 ring-background-dark"></span>
+</button>
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-primary/20 border border-primary/50 flex items-center justify-center">
+<span class="text-lg font-bold text-primary">CW</span>
+</div>
+<div class="hidden sm:flex flex-col text-right">
+<span class="text-sm font-semibold text-white">CodeWizard</span>
+<span class="text-xs text-[#A0A0A0]">Level 23</span>
+</div>
+</div>
+<button class="lg:hidden p-2 text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 lg:px-10 xl:px-20 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col lg:flex-row max-w-screen-2xl flex-1 gap-8">
+<main class="w-full lg:w-[80%] flex flex-col">
+<div class="flex flex-wrap justify-between items-center gap-4 p-4">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">BruteBros Problemset</h1>
+</div>
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-primary/50 focus-within:border-primary focus-within:shadow-glow-primary transition-all duration-300">
+<div class="text-primary flex bg-transparent items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-[#A0A0A0] px-4 rounded-l-none pl-2 text-base font-normal leading-normal" placeholder="Search problems by title or ID" value=""/>
+</div>
+</label>
+</div>
+<div class="px-4 py-3 @container">
+<div class="flex overflow-hidden rounded-lg border border-primary/50 bg-background-dark/80">
+<table class="flex-1">
+<thead class="border-b border-b-primary/50">
+<tr class="bg-primary/10">
+<th class="px-4 py-3 text-left text-white w-[100px] text-sm font-medium leading-normal">ID</th>
+<th class="px-4 py-3 text-left text-white w-2/5 text-sm font-medium leading-normal">Title</th>
+<th class="px-4 py-3 text-left text-white w-40 text-sm font-medium leading-normal">Difficulty</th>
+<th class="px-4 py-3 text-left text-white w-1/4 text-sm font-medium leading-normal">Tags</th>
+<th class="px-4 py-3 text-left text-white w-32 text-sm font-medium leading-normal">Acceptance</th>
+<th class="px-4 py-3 text-left text-white w-14 text-sm font-medium leading-normal">Submitted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-t-primary/20 hover:bg-primary/10 transition-colors duration-200">
+<td class="h-[60px] px-4 py-2 w-[100px] text-[#A0A0A0] text-sm font-normal leading-normal">#101</td>
+<td class="h-[60px] px-4 py-2 w-2/5 text-white text-sm font-medium leading-normal hover:text-primary cursor-pointer">Two Sum</td>
+<td class="h-[60px] px-4 py-2 w-40 text-[#73F673] text-sm font-normal leading-normal">Easy</td>
+<td class="h-[60px] px-4 py-2 w-1/4 text-[#A0A0A0] text-sm font-normal leading-normal">Array, Hash Table</td>
+<td class="h-[60px] px-4 py-2 w-32 text-[#A0A0A0] text-sm font-normal leading-normal">48.5%</td>
+<td class="h-[60px] px-4 py-2 w-14 text-sm font-normal leading-normal text-[#67E267]"><span class="material-symbols-outlined text-xl">check_circle</span></td>
+</tr>
+<tr class="border-t border-t-primary/20 hover:bg-primary/10 transition-colors duration-200">
+<td class="h-[60px] px-4 py-2 w-[100px] text-[#A0A0A0] text-sm font-normal leading-normal">#102</td>
+<td class="h-[60px] px-4 py-2 w-2/5 text-white text-sm font-medium leading-normal hover:text-primary cursor-pointer">Median of Two Sorted Arrays</td>
+<td class="h-[60px] px-4 py-2 w-40 text-[#FF8C8C] text-sm font-normal leading-normal">Hard</td>
+<td class="h-[60px] px-4 py-2 w-1/4 text-[#A0A0A0] text-sm font-normal leading-normal">Array, Binary Search</td>
+<td class="h-[60px] px-4 py-2 w-32 text-[#A0A0A0] text-sm font-normal leading-normal">35.2%</td>
+<td class="h-[60px] px-4 py-2 w-14 text-sm font-normal leading-normal text-transparent"></td>
+</tr>
+<tr class="border-t border-t-primary/20 hover:bg-primary/10 transition-colors duration-200">
+<td class="h-[60px] px-4 py-2 w-[100px] text-[#A0A0A0] text-sm font-normal leading-normal">#103</td>
+<td class="h-[60px] px-4 py-2 w-2/5 text-white text-sm font-medium leading-normal hover:text-primary cursor-pointer">Longest Substring Without Repeating...</td>
+<td class="h-[60px] px-4 py-2 w-40 text-[#FFE44D] text-sm font-normal leading-normal">Medium</td>
+<td class="h-[60px] px-4 py-2 w-1/4 text-[#A0A0A0] text-sm font-normal leading-normal">Sliding Window, String</td>
+<td class="h-[60px] px-4 py-2 w-32 text-[#A0A0A0] text-sm font-normal leading-normal">33.1%</td>
+<td class="h-[60px] px-4 py-2 w-14 text-sm font-normal leading-normal text-[#67E267]"><span class="material-symbols-outlined text-xl">check_circle</span></td>
+</tr>
+<tr class="border-t border-t-primary/20 hover:bg-primary/10 transition-colors duration-200">
+<td class="h-[60px] px-4 py-2 w-[100px] text-[#A0A0A0] text-sm font-normal leading-normal">#104</td>
+<td class="h-[60px] px-4 py-2 w-2/5 text-white text-sm font-medium leading-normal hover:text-primary cursor-pointer">Reverse Integer</td>
+<td class="h-[60px] px-4 py-2 w-40 text-[#73F673] text-sm font-normal leading-normal">Easy</td>
+<td class="h-[60px] px-4 py-2 w-1/4 text-[#A0A0A0] text-sm font-normal leading-normal">Math</td>
+<td class="h-[60px] px-4 py-2 w-32 text-[#A0A0A0] text-sm font-normal leading-normal">27.8%</td>
+<td class="h-[60px] px-4 py-2 w-14 text-sm font-normal leading-normal text-transparent"></td>
+</tr>
+<tr class="border-t border-t-primary/20 hover:bg-primary/10 transition-colors duration-200">
+<td class="h-[60px] px-4 py-2 w-[100px] text-[#A0A0A0] text-sm font-normal leading-normal">#105</td>
+<td class="h-[60px] px-4 py-2 w-2/5 text-white text-sm font-medium leading-normal hover:text-primary cursor-pointer">Container With Most Water</td>
+<td class="h-[60px] px-4 py-2 w-40 text-[#FFE44D] text-sm font-normal leading-normal">Medium</td>
+<td class="h-[60px] px-4 py-2 w-1/4 text-[#A0A0A0] text-sm font-normal leading-normal">Two Pointers, Array</td>
+<td class="h-[60px] px-4 py-2 w-32 text-[#A0A0A0] text-sm font-normal leading-normal">53.4%</td>
+<td class="h-[60px] px-4 py-2 w-14 text-sm font-normal leading-normal text-transparent"></td>
+</tr>
+<tr class="border-t border-t-primary/20 hover:bg-primary/10 transition-colors duration-200">
+<td class="h-[60px] px-4 py-2 w-[100px] text-[#A0A0A0] text-sm font-normal leading-normal">#106</td>
+<td class="h-[60px] px-4 py-2 w-2/5 text-white text-sm font-medium leading-normal hover:text-primary cursor-pointer">Trapping Rain Water</td>
+<td class="h-[60px] px-4 py-2 w-40 text-[#FF8C8C] text-sm font-normal leading-normal">Hard</td>
+<td class="h-[60px] px-4 py-2 w-1/4 text-[#A0A0A0] text-sm font-normal leading-normal">Array, DP, Stack</td>
+<td class="h-[60px] px-4 py-2 w-32 text-[#A0A0A0] text-sm font-normal leading-normal">50.1%</td>
+<td class="h-[60px] px-4 py-2 w-14 text-sm font-normal leading-normal text-[#67E267]"><span class="material-symbols-outlined text-xl">check_circle</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 mt-auto">
+<a class="flex size-10 items-center justify-center text-primary/70 hover:text-primary" href="#">
+<span class="material-symbols-outlined">chevron_left</span>
+</a>
+<a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-black rounded-full bg-primary" href="#">1</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full hover:bg-primary/20" href="#">2</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full hover:bg-primary/20" href="#">3</a>
+<span class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full">...</span>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full hover:bg-primary/20" href="#">10</a>
+<a class="flex size-10 items-center justify-center text-primary/70 hover:text-primary" href="#">
+<span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</main>
+<aside class="w-full lg:w-[20%] flex flex-col gap-8">
+<div class="p-5 rounded-lg border border-primary/50 bg-background-dark/80 mt-0 lg:mt-[168px]">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-5">Filters</h2>
+<div class="space-y-6">
+<div>
+<h3 class="text-sm font-medium text-[#A0A0A0] mb-2">Difficulty</h3>
+<div class="flex space-x-2">
+<button class="flex-1 px-3 py-1.5 text-sm rounded-md bg-primary text-black font-semibold">Easy</button>
+<button class="flex-1 px-3 py-1.5 text-sm rounded-md bg-transparent border border-primary/50 text-white hover:bg-primary/20">Medium</button>
+<button class="flex-1 px-3 py-1.5 text-sm rounded-md bg-transparent border border-primary/50 text-white hover:bg-primary/20">Hard</button>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-medium text-[#A0A0A0] mb-2">Status</h3>
+<div class="flex space-x-2">
+<button class="flex-1 px-3 py-1.5 text-sm rounded-md bg-transparent border border-primary/50 text-white hover:bg-primary/20">All</button>
+<button class="flex-1 px-3 py-1.5 text-sm rounded-md bg-transparent border border-primary/50 text-white hover:bg-primary/20">Solved</button>
+<button class="flex-1 px-3 py-1.5 text-sm rounded-md bg-primary text-black font-semibold">Unsolved</button>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-medium text-[#A0A0A0] mb-2">Tags</h3>
+<div class="relative">
+<input class="w-full bg-transparent border border-primary/50 rounded-md py-2 px-3 text-sm placeholder:text-[#A0A0A0] focus:border-primary focus:ring-0" placeholder="Search for tags..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-2 mt-3">
+<div class="flex items-center bg-primary/20 text-primary text-xs font-medium px-2 py-1 rounded-full">
+<span>Array</span>
+<button class="ml-1.5 text-primary/70 hover:text-primary"><span class="material-symbols-outlined !text-sm">close</span></button>
+</div>
+<div class="flex items-center bg-primary/20 text-primary text-xs font-medium px-2 py-1 rounded-full">
+<span>Dynamic Programming</span>
+<button class="ml-1.5 text-primary/70 hover:text-primary"><span class="material-symbols-outlined !text-sm">close</span></button>
+</div>
+</div>
+</div>
+<div class="flex gap-4 pt-2">
+<button class="flex-1 px-4 py-2 text-sm rounded-lg bg-primary text-black font-bold">Apply Filters</button>
+<button class="flex-1 px-4 py-2 text-sm rounded-lg border border-primary/50 text-white hover:bg-primary/20">Reset</button>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-lg border border-primary/50 bg-background-dark/80">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-5">Top Bros</h2>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-2 rounded-md bg-primary/20">
+<div class="flex items-center gap-4">
+<span class="font-bold text-lg text-primary">1</span>
+<p class="text-white font-medium">CodeWizard</p>
+</div>
+<p class="text-primary font-semibold">9850 pts</p>
+</div>
+<div class="flex items-center justify-between p-2 rounded-md hover:bg-primary/10">
+<div class="flex items-center gap-4">
+<span class="font-bold text-lg text-[#A0A0A0]">2</span>
+<p class="text-white font-medium">AlgoNinja</p>
+</div>
+<p class="text-[#A0A0A0] font-semibold">9540 pts</p>
+</div>
+<div class="flex items-center justify-between p-2 rounded-md hover:bg-primary/10">
+<div class="flex items-center gap-4">
+<span class="font-bold text-lg text-[#A0A0A0]">3</span>
+<p class="text-white font-medium">SyntaxSorcerer</p>
+</div>
+<p class="text-[#A0A0A0] font-semibold">9210 pts</p>
+</div>
+<div class="flex items-center justify-between p-2 rounded-md hover:bg-primary/10">
+<div class="flex items-center gap-4">
+<span class="font-bold text-lg text-[#A0A0A0]">4</span>
+<p class="text-white font-medium">BitMaster</p>
+</div>
+<p class="text-[#A0A0A0] font-semibold">8990 pts</p>
+</div>
+<div class="flex items-center justify-between p-2 rounded-md hover:bg-primary/10">
+<div class="flex items-center gap-4">
+<span class="font-bold text-lg text-[#A0A0A0]">5</span>
+<p class="text-white font-medium">LogicLord</p>
+</div>
+<p class="text-[#A0A0A0] font-semibold">8750 pts</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
